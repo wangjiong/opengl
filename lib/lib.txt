@@ -1,0 +1,4 @@
+assimp.lib
+glew32s.lib
+glfw3.lib
+SOIL.lib
