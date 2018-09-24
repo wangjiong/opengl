@@ -31,7 +31,8 @@ int main()
 		return -1;
 	}
 	// ¶¥µã
-	float vertices[] = {
+	float vertices[] = 
+	{
 		0.0f, 0.0f, 0.0f, 
 		0.5f, 0.5f, 0.0f,
 		0.3f, 0.6f, 0.0f,
