@@ -1,14 +1,14 @@
 #version 330 core
 
-uniform Uniforms{
+layout (location = 0) in vec2 vPos;
+
+layout (std140) uniform Uniforms{
 	vec3 translation;
 	float scale;
-	vec4 rotation;
 	bool enabled;
+	vec4 rotation;
 };
 
-in vec2 vPos;
-in vec3 vColor;
 out vec4 fColor;
 
 void main(){
@@ -19,8 +19,7 @@ void main(){
 	mat3 S = mat3(
 		0 , -axis.z , axis.y,
 		axis.z , 0 , -axis.x,
-		-axis.y , axis.x , 0,
-	);
+		-axis.y , axis.x , 0 );
 	mat3 uuT = outerProduct(axis,axis);
 	mat3 rot = uuT + cos(angle)*(I -uuT) + sin(angle) * S;
 	pos *= scale;
@@ -28,4 +27,10 @@ void main(){
 	pos += translation;
 	fColor = vec4(scale , scale , scale ,1);
 	gl_Position = vec4(pos , 1);
+
+	if(enabled){
+		fColor = vec4(0,0,1,0);
+	}else{
+		fColor = vec4(0,1,0,0);
+	}
 }

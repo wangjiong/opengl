@@ -1,10 +1,10 @@
 #version 330 core
 
-uniform Uniforms{
+layout (std140) uniform Uniforms{
 	vec3 translation;
 	float scale;
-	vec4 rotation;
 	bool enabled;
+	vec4 rotation;
 };
 
 in vec4 fColor;
