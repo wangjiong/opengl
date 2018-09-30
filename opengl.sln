@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opengl", "opengl\opengl.vcxproj", "{9F0D4AF3-91D0-40C0-BC70-A3C4B2E40665}"
 EndProject
@@ -13,11 +13,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test-Bresenham's line algor
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01-01-Triangles", "01-01-Triangles\01-01-Triangles.vcxproj", "{C34C0777-9AF6-4AAD-9223-34BFD79CA724}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-01-uniform", "02-01-uniform\02-01-uniform.vcxproj", "{EC6E4D07-4F26-4A8E-B140-2A0CD019BB3E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-02-uniform", "02-01-uniform\02-01-uniform.vcxproj", "{EC6E4D07-4F26-4A8E-B140-2A0CD019BB3E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-02-uniform变量", "02-02-uniform变量\02-02-uniform变量.vcxproj", "{C2EBD7C8-5611-4A5F-947E-EE66080ED0CB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-03-uniform变量", "02-02-uniform变量\02-02-uniform变量.vcxproj", "{C2EBD7C8-5611-4A5F-947E-EE66080ED0CB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-04-uniform块", "02-04-uniform块\02-04-uniform块.vcxproj", "{AD15070E-6EB5-4858-AFDF-EB704FFD4D9A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-04-01-uniform块", "02-04-uniform块\02-04-uniform块.vcxproj", "{AD15070E-6EB5-4858-AFDF-EB704FFD4D9A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-04-04-buffer块", "02-04-04-buffer块\02-04-04-buffer块.vcxproj", "{C6F42773-A9F0-48B9-BEAF-6222BB2852A9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02-04-02-uniform块", "02-04-02-uniform块\02-04-02-uniform块.vcxproj", "{FB5F24DD-5A65-486E-8AA7-F16632FD9C14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +95,22 @@ Global
 		{AD15070E-6EB5-4858-AFDF-EB704FFD4D9A}.Release|x64.Build.0 = Release|x64
 		{AD15070E-6EB5-4858-AFDF-EB704FFD4D9A}.Release|x86.ActiveCfg = Release|Win32
 		{AD15070E-6EB5-4858-AFDF-EB704FFD4D9A}.Release|x86.Build.0 = Release|Win32
+		{C6F42773-A9F0-48B9-BEAF-6222BB2852A9}.Debug|x64.ActiveCfg = Debug|x64
+		{C6F42773-A9F0-48B9-BEAF-6222BB2852A9}.Debug|x64.Build.0 = Debug|x64
+		{C6F42773-A9F0-48B9-BEAF-6222BB2852A9}.Debug|x86.ActiveCfg = Debug|Win32
+		{C6F42773-A9F0-48B9-BEAF-6222BB2852A9}.Debug|x86.Build.0 = Debug|Win32
+		{C6F42773-A9F0-48B9-BEAF-6222BB2852A9}.Release|x64.ActiveCfg = Release|x64
+		{C6F42773-A9F0-48B9-BEAF-6222BB2852A9}.Release|x64.Build.0 = Release|x64
+		{C6F42773-A9F0-48B9-BEAF-6222BB2852A9}.Release|x86.ActiveCfg = Release|Win32
+		{C6F42773-A9F0-48B9-BEAF-6222BB2852A9}.Release|x86.Build.0 = Release|Win32
+		{FB5F24DD-5A65-486E-8AA7-F16632FD9C14}.Debug|x64.ActiveCfg = Debug|x64
+		{FB5F24DD-5A65-486E-8AA7-F16632FD9C14}.Debug|x64.Build.0 = Debug|x64
+		{FB5F24DD-5A65-486E-8AA7-F16632FD9C14}.Debug|x86.ActiveCfg = Debug|Win32
+		{FB5F24DD-5A65-486E-8AA7-F16632FD9C14}.Debug|x86.Build.0 = Debug|Win32
+		{FB5F24DD-5A65-486E-8AA7-F16632FD9C14}.Release|x64.ActiveCfg = Release|x64
+		{FB5F24DD-5A65-486E-8AA7-F16632FD9C14}.Release|x64.Build.0 = Release|x64
+		{FB5F24DD-5A65-486E-8AA7-F16632FD9C14}.Release|x86.ActiveCfg = Release|Win32
+		{FB5F24DD-5A65-486E-8AA7-F16632FD9C14}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

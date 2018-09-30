@@ -5,8 +5,8 @@ layout (location = 0) in vec2 vPos;
 layout (std140) uniform Uniforms{
 	vec3 translation;
 	float scale;
-	vec4 rotation;
 	bool enabled;
+	vec4 rotation;
 };
 
 out vec4 fColor;

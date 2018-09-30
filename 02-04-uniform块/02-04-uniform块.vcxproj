@@ -23,6 +23,7 @@
     <ProjectGuid>{AD15070E-6EB5-4858-AFDF-EB704FFD4D9A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>My0204uniform块</RootNamespace>
+    <ProjectName>02-04-01-uniform块</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
