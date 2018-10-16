@@ -2,13 +2,14 @@
 
 layout (location = 0) in vec4 vPos;
 
-/* 为什么会报错呢
-buffer BufferObject {
-	int mode;
-	vec4 points[];
+out Lighting {
+	vec3 normal;
+	vec2 bumpCoord;
 };
-*/
 
 void main(){
+	normal = vec3(1,0,0);
+	bumpCoord = vec2(0,1);
+
 	gl_Position = vPos;
 }

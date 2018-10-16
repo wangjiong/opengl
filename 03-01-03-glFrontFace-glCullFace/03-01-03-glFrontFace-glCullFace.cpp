@@ -39,13 +39,13 @@ int main() {
 
 	// VBO
 	GLfloat vertices[NumVertices][2] = {
-		{-0.90, -0.90},
-		{0.85, -0.90},
-		{-0.90, 0.85},
+		{-1.0, 0}, // À≥ ±’Î
+		{-0.5, 1},
+		{0, 0},
 
-		{0.90, -0.85},
-		{0.90, 0.90},
-		{-0.85, 0.90},
+		{0, 0},// ƒÊ ±’Î
+		{1, 0},
+		{0.5, 1},
 	};
 	glGenBuffers(NumBuffers, Buffers);
 	glBindBuffer(GL_ARRAY_BUFFER, Buffers[ArrayBuffer]);
@@ -62,6 +62,13 @@ int main() {
 	while (!glfwWindowShouldClose(window)) {
 		glClearColor(1, 1, 1, 1);
 		glClear(GL_COLOR_BUFFER_BIT);
+
+		//glFrontFace( GL_CCW );
+		//glFrontFace(GL_CW);
+
+		glEnable(GL_CULL_FACE);
+		//glCullFace(GL_FRONT);
+		//glCullFace( GL_BACK );
 
 		glBindVertexArray(VAOs[Triangles]);
 		glDrawArrays(GL_TRIANGLES, 0, NumVertices);
