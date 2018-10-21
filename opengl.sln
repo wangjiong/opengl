@@ -29,6 +29,14 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-01-03-glPolygonMode", "0
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-01-03-glFrontFace-glCullFace", "03-01-03-glFrontFace-glCullFace\03-01-03-glFrontFace-glCullFace.vcxproj", "{06683DF9-1501-4F0E-8AA9-E0761E9536CB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-02-02-glBufferSubData", "03-02-02-glBufferSubData\03-02-02-glBufferSubData.vcxproj", "{BEA880AE-0F69-4E3F-B818-C7836B161549}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-02-03-glMapBuffer", "03-02-03-glMapBuffer\03-02-03-glMapBuffer.vcxproj", "{D99255AC-DE41-4F49-BF2A-2AC3C4957382}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-03-01-glVertexAttribPointer-glEnableVertexAttribArray", "03-03-01-glVertexAttribPointer-glEnableVertexAttribArray\03-03-01-glVertexAttribPointer-glEnableVertexAttribArray.vcxproj", "{8CC860A5-C89A-4B4A-B6C5-2107F842B319}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "03-04-01-glDrawArrays-glDrawElements", "03-04-01-glDrawArrays-glDrawElements\03-04-01-glDrawArrays-glDrawElements.vcxproj", "{792F2FDD-4654-4BA6-AD2D-AB4F72ED1E95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -141,6 +149,38 @@ Global
 		{06683DF9-1501-4F0E-8AA9-E0761E9536CB}.Release|x64.Build.0 = Release|x64
 		{06683DF9-1501-4F0E-8AA9-E0761E9536CB}.Release|x86.ActiveCfg = Release|Win32
 		{06683DF9-1501-4F0E-8AA9-E0761E9536CB}.Release|x86.Build.0 = Release|Win32
+		{BEA880AE-0F69-4E3F-B818-C7836B161549}.Debug|x64.ActiveCfg = Debug|x64
+		{BEA880AE-0F69-4E3F-B818-C7836B161549}.Debug|x64.Build.0 = Debug|x64
+		{BEA880AE-0F69-4E3F-B818-C7836B161549}.Debug|x86.ActiveCfg = Debug|Win32
+		{BEA880AE-0F69-4E3F-B818-C7836B161549}.Debug|x86.Build.0 = Debug|Win32
+		{BEA880AE-0F69-4E3F-B818-C7836B161549}.Release|x64.ActiveCfg = Release|x64
+		{BEA880AE-0F69-4E3F-B818-C7836B161549}.Release|x64.Build.0 = Release|x64
+		{BEA880AE-0F69-4E3F-B818-C7836B161549}.Release|x86.ActiveCfg = Release|Win32
+		{BEA880AE-0F69-4E3F-B818-C7836B161549}.Release|x86.Build.0 = Release|Win32
+		{D99255AC-DE41-4F49-BF2A-2AC3C4957382}.Debug|x64.ActiveCfg = Debug|x64
+		{D99255AC-DE41-4F49-BF2A-2AC3C4957382}.Debug|x64.Build.0 = Debug|x64
+		{D99255AC-DE41-4F49-BF2A-2AC3C4957382}.Debug|x86.ActiveCfg = Debug|Win32
+		{D99255AC-DE41-4F49-BF2A-2AC3C4957382}.Debug|x86.Build.0 = Debug|Win32
+		{D99255AC-DE41-4F49-BF2A-2AC3C4957382}.Release|x64.ActiveCfg = Release|x64
+		{D99255AC-DE41-4F49-BF2A-2AC3C4957382}.Release|x64.Build.0 = Release|x64
+		{D99255AC-DE41-4F49-BF2A-2AC3C4957382}.Release|x86.ActiveCfg = Release|Win32
+		{D99255AC-DE41-4F49-BF2A-2AC3C4957382}.Release|x86.Build.0 = Release|Win32
+		{8CC860A5-C89A-4B4A-B6C5-2107F842B319}.Debug|x64.ActiveCfg = Debug|x64
+		{8CC860A5-C89A-4B4A-B6C5-2107F842B319}.Debug|x64.Build.0 = Debug|x64
+		{8CC860A5-C89A-4B4A-B6C5-2107F842B319}.Debug|x86.ActiveCfg = Debug|Win32
+		{8CC860A5-C89A-4B4A-B6C5-2107F842B319}.Debug|x86.Build.0 = Debug|Win32
+		{8CC860A5-C89A-4B4A-B6C5-2107F842B319}.Release|x64.ActiveCfg = Release|x64
+		{8CC860A5-C89A-4B4A-B6C5-2107F842B319}.Release|x64.Build.0 = Release|x64
+		{8CC860A5-C89A-4B4A-B6C5-2107F842B319}.Release|x86.ActiveCfg = Release|Win32
+		{8CC860A5-C89A-4B4A-B6C5-2107F842B319}.Release|x86.Build.0 = Release|Win32
+		{792F2FDD-4654-4BA6-AD2D-AB4F72ED1E95}.Debug|x64.ActiveCfg = Debug|x64
+		{792F2FDD-4654-4BA6-AD2D-AB4F72ED1E95}.Debug|x64.Build.0 = Debug|x64
+		{792F2FDD-4654-4BA6-AD2D-AB4F72ED1E95}.Debug|x86.ActiveCfg = Debug|Win32
+		{792F2FDD-4654-4BA6-AD2D-AB4F72ED1E95}.Debug|x86.Build.0 = Debug|Win32
+		{792F2FDD-4654-4BA6-AD2D-AB4F72ED1E95}.Release|x64.ActiveCfg = Release|x64
+		{792F2FDD-4654-4BA6-AD2D-AB4F72ED1E95}.Release|x64.Build.0 = Release|x64
+		{792F2FDD-4654-4BA6-AD2D-AB4F72ED1E95}.Release|x86.ActiveCfg = Release|Win32
+		{792F2FDD-4654-4BA6-AD2D-AB4F72ED1E95}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
