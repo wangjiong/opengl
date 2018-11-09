@@ -61,6 +61,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-05-06-01-透明测试", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-05-06-02-混合", "04-05-06-02-混合\04-05-06-02-混合.vcxproj", "{F216DB1B-BEC2-4E1B-B4A4-8B907D37D4C3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-帧缓冲对象-渲染缓存", "04-07-帧缓冲对象-渲染缓存\04-07-帧缓冲对象-渲染缓存.vcxproj", "{A21C8322-C8CE-43AB-9C4E-77E590D29393}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -301,6 +303,14 @@ Global
 		{F216DB1B-BEC2-4E1B-B4A4-8B907D37D4C3}.Release|x64.Build.0 = Release|x64
 		{F216DB1B-BEC2-4E1B-B4A4-8B907D37D4C3}.Release|x86.ActiveCfg = Release|Win32
 		{F216DB1B-BEC2-4E1B-B4A4-8B907D37D4C3}.Release|x86.Build.0 = Release|Win32
+		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Debug|x64.ActiveCfg = Debug|x64
+		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Debug|x64.Build.0 = Debug|x64
+		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Debug|x86.ActiveCfg = Debug|Win32
+		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Debug|x86.Build.0 = Debug|Win32
+		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Release|x64.ActiveCfg = Release|x64
+		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Release|x64.Build.0 = Release|x64
+		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Release|x86.ActiveCfg = Release|Win32
+		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
