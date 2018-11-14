@@ -63,6 +63,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-05-06-02-混合", "04-05
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-帧缓冲对象-渲染缓存", "04-07-帧缓冲对象-渲染缓存\04-07-帧缓冲对象-渲染缓存.vcxproj", "{A21C8322-C8CE-43AB-9C4E-77E590D29393}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-08-01-多重渲染缓存的同步写入", "04-08-01-多重渲染缓存的同步写入\04-08-01-多重渲染缓存的同步写入.vcxproj", "{B2F321E3-65C2-4E87-A9EF-69961BCE328F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-08-02-双源融混", "04-08-02-双源融混\04-08-02-双源融混.vcxproj", "{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -311,6 +315,22 @@ Global
 		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Release|x64.Build.0 = Release|x64
 		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Release|x86.ActiveCfg = Release|Win32
 		{A21C8322-C8CE-43AB-9C4E-77E590D29393}.Release|x86.Build.0 = Release|Win32
+		{B2F321E3-65C2-4E87-A9EF-69961BCE328F}.Debug|x64.ActiveCfg = Debug|x64
+		{B2F321E3-65C2-4E87-A9EF-69961BCE328F}.Debug|x64.Build.0 = Debug|x64
+		{B2F321E3-65C2-4E87-A9EF-69961BCE328F}.Debug|x86.ActiveCfg = Debug|Win32
+		{B2F321E3-65C2-4E87-A9EF-69961BCE328F}.Debug|x86.Build.0 = Debug|Win32
+		{B2F321E3-65C2-4E87-A9EF-69961BCE328F}.Release|x64.ActiveCfg = Release|x64
+		{B2F321E3-65C2-4E87-A9EF-69961BCE328F}.Release|x64.Build.0 = Release|x64
+		{B2F321E3-65C2-4E87-A9EF-69961BCE328F}.Release|x86.ActiveCfg = Release|Win32
+		{B2F321E3-65C2-4E87-A9EF-69961BCE328F}.Release|x86.Build.0 = Release|Win32
+		{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}.Debug|x64.ActiveCfg = Debug|x64
+		{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}.Debug|x64.Build.0 = Debug|x64
+		{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}.Debug|x86.ActiveCfg = Debug|Win32
+		{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}.Debug|x86.Build.0 = Debug|Win32
+		{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}.Release|x64.ActiveCfg = Release|x64
+		{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}.Release|x64.Build.0 = Release|x64
+		{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}.Release|x86.ActiveCfg = Release|Win32
+		{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
