@@ -29,7 +29,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="04-08-02-双源融混.cpp">
+    <ClCompile Include="04-09-glReadPixels.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\glad.c">
