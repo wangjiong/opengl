@@ -27,14 +27,16 @@ void init() {
 		GLubyte color[4];
 		GLfloat position[4];
 	};
+	float z1 = 0.5;
+	float z2 = 0.4;
 	VertexData vertices[NumVertices] = {
-		{{255, 0, 0, 0}, {-1, -1 , 0.5}}, // ºì
-		{{255, 0, 0, 0}, {1, -1 , 0.5}},
-		{{255, 0, 0, 0}, {0, 1 ,0.5}},
+		{{255, 0, 0, 0}, {-1, -1 , z1}}, // ºì
+		{{255, 0, 0, 0}, {1, -1 , z1}},
+		{{255, 0, 0, 0}, {0, 1 , z1}},
 
-		{{0, 0, 255, 0}, {-1, 1 , 0.9}},
-		{{0, 0, 255, 0}, {0, -1 , 0.1}},
-		{{0, 0, 255, 0}, {1, 1 , 0.9}}
+		{{0, 0, 255, 0}, {-1, 1 , z2}}, // À¶
+		{{0, 0, 255, 0}, {0, -1 , z2}},
+		{{0, 0, 255, 0}, {1, 1, z2}}
 	};
 
 	glGenBuffers(NumBuffers, Buffers);
@@ -69,7 +71,7 @@ void init() {
 
 void display() {
 	glClearColor(0, 1, 1, 1);
-	glClearDepth(0.751);
+	glClearDepth(1); // depth
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 	glBindVertexArray(VAOs[Triangles]);
