@@ -1,4 +1,4 @@
-// 01-01-Triangles.cpp: ¶¨Òå¿ØÖÆÌ¨Ó¦ÓÃ³ÌĞòµÄÈë¿Úµã¡£
+ï»¿// 01-01-Triangles.cpp: å®šä¹‰æ§åˆ¶å°åº”ç”¨ç¨‹åºçš„å…¥å£ç‚¹ã€‚
 //
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -30,92 +30,95 @@ int windowWidth = 800, windowHeight = 600;
 
 void init()
 {
-	/////////////////////////////////////////////////////////////////////// 1.Ö¡»º³å¶ÔÏó ///////////////////////////////////////////////////////////////////////
-	// äÖÈ¾»º´æ
-	glGenRenderbuffers( NumRenderbuffers, renderbuffer );
-	// ÑÕÉ«»º³åÇø
-	glBindRenderbuffer( GL_RENDERBUFFER, renderbuffer[Color] );
-	glRenderbufferStorage( GL_RENDERBUFFER, GL_RGBA, 256, 256 );
-	// Éî¶È»º³åÇø
-	glBindRenderbuffer( GL_RENDERBUFFER, renderbuffer[Depth] );
-	glRenderbufferStorage( GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 256, 256 );
 
-	// Ö¡»º³å¶ÔÏó
-	glGenFramebuffers( 1, &framebuffer );
-	glBindFramebuffer( GL_DRAW_FRAMEBUFFER, framebuffer );
-	glFramebufferRenderbuffer( GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, renderbuffer[Color] );
-	glFramebufferRenderbuffer( GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, renderbuffer[Depth] );
-	/////////////////////////////////////////////////////////////////////// 1.Ö¡»º³å¶ÔÏó ///////////////////////////////////////////////////////////////////////
-
-	/////////////////////////////////////////////////////////////////////// 2.»æÖÆÈı½ÇĞÎ ///////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////// 1.ç»˜åˆ¶ä¸‰è§’å½¢ ///////////////////////////////////////////////////////////////////////
 	// VAO
-	glGenVertexArrays( NumVAOs, VAOs );
-	glBindVertexArray( VAOs[Triangles] );
+	glGenVertexArrays(NumVAOs, VAOs);
+	glBindVertexArray(VAOs[Triangles]);
 
 	// VBO
-	struct VertexData
-	{
+	struct VertexData {
 		GLubyte color[4];
 		GLfloat position[4];
 	};
 	VertexData vertices[NumVertices] = {
-		{ { 255, 0, 0, 255 }, { -1, -1, 0.5 } }, // ºì
-		{ { 255, 0, 0, 255 }, { 1, -1, 0.5 } },
-		{ { 255, 0, 0, 125 }, { 0, 1, 0.5 } },
+		{{255, 0, 0, 255}, {-1, -1, 0}}, // çº¢
+		{{255, 0, 0, 255}, {0, -1, 0}},
+		{{255, 0, 0, 255}, {-0.5, 1, 0}},
 
-		{ { 0, 0, 255, 125 }, { -1, 1, 0.4 } }, // À¶
-		{ { 0, 0, 255, 125 }, { 0, -1, 0.4 } },
-		{ { 0, 0, 255, 125 }, { 1, 1, 0.4 } }
+		{{0, 0, 255, 255}, {0, -1, 0}}, // è“
+		{{0, 0, 255, 255}, {1, -1, 0}},
+		{{0, 0, 255, 255}, {0.5, 1, 0}}
 	};
 
-	glGenBuffers( NumBuffers, Buffers );
-	glBindBuffer( GL_ARRAY_BUFFER, Buffers[ArrayBuffer] );
-	glBufferData( GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW );
+	glGenBuffers(NumBuffers, Buffers);
+	glBindBuffer(GL_ARRAY_BUFFER, Buffers[ArrayBuffer]);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	// Shader
-	Shader shader( "shader.vs", "shader.fs" );
+	Shader shader("shader.vs", "shader.fs");
 	shader.use();
 
-	// ¶¥µãÊôĞÔ
-	// ÑÕÉ«
-	glVertexAttribPointer( vColor, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof( VertexData ), BUFFER_OFFSET(0) );
-	glEnableVertexAttribArray( vColor );
-	// Î»ÖÃ
-	glVertexAttribPointer( vPosition, 3, GL_FLOAT, GL_FALSE, sizeof( VertexData ), BUFFER_OFFSET(sizeof(vertices[0].color)) );
-	glEnableVertexAttribArray( vPosition );
-	// ¿ªÆô»ìºÏ
-	glEnable( GL_BLEND );
-	glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
-	// Éî¶È²âÊÔ
-	glEnable( GL_DEPTH_TEST );
-	/////////////////////////////////////////////////////////////////////// 2.»æÖÆÈı½ÇĞÎ ///////////////////////////////////////////////////////////////////////
+	// é¡¶ç‚¹å±æ€§
+	// é¢œè‰²
+	glVertexAttribPointer(vColor, 4, GL_UNSIGNED_BYTE, GL_TRUE, sizeof(VertexData), BUFFER_OFFSET(0));
+	glEnableVertexAttribArray(vColor);
+	// ä½ç½®
+	glVertexAttribPointer(vPosition, 3, GL_FLOAT, GL_FALSE, sizeof(VertexData), BUFFER_OFFSET(sizeof(vertices[0].color)));
+	glEnableVertexAttribArray(vPosition);
+	// å¼€å¯æ··åˆ
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	// æ·±åº¦æµ‹è¯•
+	glEnable(GL_DEPTH_TEST);
+	/////////////////////////////////////////////////////////////////////// 1.ç»˜åˆ¶ä¸‰è§’å½¢ ///////////////////////////////////////////////////////////////////////
+
+
+	/////////////////////////////////////////////////////////////////////// 2.å¸§ç¼“å†²å¯¹è±¡ ///////////////////////////////////////////////////////////////////////
+	// 1.å¸§ç¼“å†²å¯¹è±¡
+	glGenFramebuffers(1, &framebuffer);
+	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, framebuffer);
+
+	// 2.æ¸²æŸ“ç¼“å­˜(é¢œè‰²ã€æ·±åº¦)
+	glGenRenderbuffers( NumRenderbuffers, renderbuffer );
+	// 2-1 é¢œè‰²ç¼“å†²åŒº
+	glBindRenderbuffer( GL_RENDERBUFFER, renderbuffer[Color] );
+	glRenderbufferStorage( GL_RENDERBUFFER, GL_RGBA, 256, 256 );
+	// 2-2 æ·±åº¦ç¼“å†²åŒº
+	glBindRenderbuffer( GL_RENDERBUFFER, renderbuffer[Depth] );
+	glRenderbufferStorage( GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 256, 256 );
+
+	glFramebufferRenderbuffer( GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, renderbuffer[Color] );
+	glFramebufferRenderbuffer( GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, renderbuffer[Depth] );
+	/////////////////////////////////////////////////////////////////////// 2.å¸§ç¼“å†²å¯¹è±¡ ///////////////////////////////////////////////////////////////////////
+
 }
 
 void display()
 {
-	/////////////////////////////////////////////////////////////////////// 1.×Ô¶¨ÒåµÄÖ¡»º³åÇø ///////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////// 1.è‡ªå®šä¹‰çš„å¸§ç¼“å†²åŒº ///////////////////////////////////////////////////////////////////////
 	glBindFramebuffer( GL_DRAW_FRAMEBUFFER, framebuffer );
 	glViewport( 0, 0, 256, 256 );
-	glClearColor( 1, 0, 0, 1 );
+	glClearColor( 1, 1, 1, 1 ); // ç™½
 	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
-	/////////////////////////////////////////////////////////////////////// 1.×Ô¶¨ÒåµÄÖ¡»º³åÇø ///////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////// 1.è‡ªå®šä¹‰çš„å¸§ç¼“å†²åŒº ///////////////////////////////////////////////////////////////////////
 
-	/////////////////////////////////////////////////////////////////////// 2.»æÖÆÈı½ÇĞÎ ///////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////// 2.ç»˜åˆ¶ä¸‰è§’å½¢ ///////////////////////////////////////////////////////////////////////
 	glBindVertexArray( VAOs[Triangles] );
 	glDrawArrays( GL_TRIANGLES, 0, 3 );
 	glDrawArrays( GL_TRIANGLES, 3, 3 );;
-	/////////////////////////////////////////////////////////////////////// 2.»æÖÆÈı½ÇĞÎ ///////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////// 2.ç»˜åˆ¶ä¸‰è§’å½¢ ///////////////////////////////////////////////////////////////////////
 
 
-	/////////////////////////////////////////////////////////////////////// 3.Ä¬ÈÏµÄÖ¡»º³åÇø ///////////////////////////////////////////////////////////////////////
-	glBindFramebuffer( GL_READ_FRAMEBUFFER, framebuffer ); // ´Ó×Ô¶¨ÒåÖ¡»º³åÇø¶ÁÊı¾İ
-	glBindFramebuffer( GL_DRAW_FRAMEBUFFER, 0 ); // Ğ´Èëµ½Ä¬ÈÏµÄÖ¡»º³åÇø
+	/////////////////////////////////////////////////////////////////////// 3.é»˜è®¤çš„å¸§ç¼“å†²åŒº ///////////////////////////////////////////////////////////////////////
+	glBindFramebuffer( GL_READ_FRAMEBUFFER, framebuffer ); // ä»è‡ªå®šä¹‰å¸§ç¼“å†²åŒºè¯»æ•°æ®
+	glBindFramebuffer( GL_DRAW_FRAMEBUFFER, 0 ); // å†™å…¥åˆ°é»˜è®¤çš„å¸§ç¼“å†²åŒº
 	glViewport( 0, 0, windowWidth, windowHeight );
-	glClearColor( 0, 0, 1, 1 );
+	glClearColor( 0, 1, 0, 1 );  // ç»¿
 	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
-	// Ö´ĞĞ¿½±´²Ù×÷
+	// æ‰§è¡Œæ‹·è´æ“ä½œ
 	glBlitFramebuffer( 0, 0, 255, 255, 0, 0, 255, 255, GL_COLOR_BUFFER_BIT, GL_NEAREST );
-	/////////////////////////////////////////////////////////////////////// 3.Ä¬ÈÏµÄÖ¡»º³åÇø ///////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////// 3.é»˜è®¤çš„å¸§ç¼“å†²åŒº ///////////////////////////////////////////////////////////////////////
 }
 
 
@@ -126,7 +129,7 @@ int main()
 	glfwWindowHint( GLFW_CONTEXT_VERSION_MINOR, 3 );
 	glfwWindowHint( GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE );
 
-	glfwWindowHint( GLFW_SAMPLES, 1 ); // ¿ªÆô¶àÖØ²ÉÑù
+	glfwWindowHint( GLFW_SAMPLES, 1 ); // å¼€å¯å¤šé‡é‡‡æ ·
 
 	GLFWwindow* window = glfwCreateWindow( 512, 512, "LearnOpenGL", NULL, NULL );
 	if( window == NULL )
