@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opengl", "opengl\opengl.vcxproj", "{9F0D4AF3-91D0-40C0-BC70-A3C4B2E40665}"
 EndProject
@@ -61,7 +61,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-05-06-01-透明测试", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-05-06-02-混合", "04-05-06-02-混合\04-05-06-02-混合.vcxproj", "{F216DB1B-BEC2-4E1B-B4A4-8B907D37D4C3}"
 EndProject
-<<<<<<< HEAD
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-05-10-抖动", "04-05-10-抖动\04-05-10-抖动.vcxproj", "{0115D074-2851-41C6-87DF-CE1A8849B3C8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-05-11-逻辑操作", "04-05-11\04-05-11.vcxproj", "{B6095EB4-E354-4AE8-8E92-AAF5C161861C}"
@@ -69,7 +68,7 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-05-12-遮挡查询", "04-05-12-遮挡查询\04-05-12-遮挡查询.vcxproj", "{C5C5A6DE-26F9-4618-B7AB-75F7288B936E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-05-13-条件渲染", "04-05-13-条件渲染\04-05-13-条件渲染.vcxproj", "{CB74DF30-087B-4555-932F-C24A3F7EC3AF}"
-=======
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-帧缓冲对象-渲染缓存", "04-07-帧缓冲对象-渲染缓存\04-07-帧缓冲对象-渲染缓存.vcxproj", "{A21C8322-C8CE-43AB-9C4E-77E590D29393}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-08-01-多重渲染缓存的同步写入", "04-08-01-多重渲染缓存的同步写入\04-08-01-多重渲染缓存的同步写入.vcxproj", "{B2F321E3-65C2-4E87-A9EF-69961BCE328F}"
@@ -79,6 +78,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-09-glReadPixels", "04-09-glReadPixels\04-09-glReadPixels.vcxproj", "{E5DF7DD4-9413-43BF-A615-EDC81E1E3CC4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-10-glBlitFramebuffer", "04-10-glBlitFramebuffer\04-10-glBlitFramebuffer.vcxproj", "{B6D4501A-ADD6-4017-B1FF-A80B22BACCA4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test-Time", "Test-Time\Test-Time.vcxproj", "{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -392,6 +393,14 @@ Global
 		{B6D4501A-ADD6-4017-B1FF-A80B22BACCA4}.Release|x64.Build.0 = Release|x64
 		{B6D4501A-ADD6-4017-B1FF-A80B22BACCA4}.Release|x86.ActiveCfg = Release|Win32
 		{B6D4501A-ADD6-4017-B1FF-A80B22BACCA4}.Release|x86.Build.0 = Release|Win32
+		{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}.Debug|x64.ActiveCfg = Debug|x64
+		{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}.Debug|x64.Build.0 = Debug|x64
+		{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}.Debug|x86.ActiveCfg = Debug|Win32
+		{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}.Debug|x86.Build.0 = Debug|Win32
+		{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}.Release|x64.ActiveCfg = Release|x64
+		{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}.Release|x64.Build.0 = Release|x64
+		{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}.Release|x86.ActiveCfg = Release|Win32
+		{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
