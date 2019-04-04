@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opengl", "opengl\opengl.vcxproj", "{9F0D4AF3-91D0-40C0-BC70-A3C4B2E40665}"
 EndProject
@@ -82,6 +82,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test-Time", "Test-Time\Test-Time.vcxproj", "{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-02-glGenFramebuffers", "04-07-02-glGenFramebuffers\04-07-02-glGenFramebuffers.vcxproj", "{AE725ADF-5353-4333-B842-A86D7C836B4F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-03-后期处理-边缘检测", "04-07-03-后期处理-边缘检测\04-07-03-后期处理-边缘检测.vcxproj", "{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -411,6 +413,14 @@ Global
 		{AE725ADF-5353-4333-B842-A86D7C836B4F}.Release|x64.Build.0 = Release|x64
 		{AE725ADF-5353-4333-B842-A86D7C836B4F}.Release|x86.ActiveCfg = Release|Win32
 		{AE725ADF-5353-4333-B842-A86D7C836B4F}.Release|x86.Build.0 = Release|Win32
+		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Debug|x64.ActiveCfg = Debug|x64
+		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Debug|x64.Build.0 = Debug|x64
+		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Debug|x86.ActiveCfg = Debug|Win32
+		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Debug|x86.Build.0 = Debug|Win32
+		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Release|x64.ActiveCfg = Release|x64
+		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Release|x64.Build.0 = Release|x64
+		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Release|x86.ActiveCfg = Release|Win32
+		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
