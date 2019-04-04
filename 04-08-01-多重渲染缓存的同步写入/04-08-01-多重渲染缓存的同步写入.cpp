@@ -17,7 +17,8 @@ GLuint Buffers[NumBuffers];
 
 const GLuint NumVertices = 6;
 
-enum {
+enum
+{
 	Color,
 	Depth,
 	NumRenderbuffers
@@ -27,25 +28,10 @@ GLuint framebuffer, renderbuffer[NumRenderbuffers];
 
 int windowWidth = 800, windowHeight = 600;
 
-void init() {
-	/////////////////////////////////////////////////////////////////////// 1.帧缓冲对象 ///////////////////////////////////////////////////////////////////////
-	// 渲染缓存
-	glGenRenderbuffers(NumRenderbuffers, renderbuffer);
-	// 颜色缓冲区
-	glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer[Color]);
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA, 256, 256);
-	// 深度缓冲区
-	glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer[Depth]);
-	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 256, 256);
+void init()
+{
 
-	// 帧缓冲对象
-	glGenFramebuffers(1, &framebuffer);
-	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, framebuffer);
-	glFramebufferRenderbuffer(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, renderbuffer[Color]);
-	glFramebufferRenderbuffer(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, renderbuffer[Depth]);
-	/////////////////////////////////////////////////////////////////////// 1.帧缓冲对象 ///////////////////////////////////////////////////////////////////////
-
-	/////////////////////////////////////////////////////////////////////// 2.绘制三角形 ///////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////// 1.绘制三角形 ///////////////////////////////////////////////////////////////////////
 	// VAO
 	glGenVertexArrays(NumVAOs, VAOs);
 	glBindVertexArray(VAOs[Triangles]);
@@ -56,13 +42,13 @@ void init() {
 		GLfloat position[4];
 	};
 	VertexData vertices[NumVertices] = {
-		{{255, 0, 0, 255}, {-1, -1, 0.5}}, // 红
-		{{255, 0, 0, 255}, {1, -1, 0.5}},
-		{{255, 0, 0, 125}, {0, 1, 0.5}},
+		{ { 255, 0, 0, 255 },{ -1, -1, 0 } }, // 红
+		{ { 255, 0, 0, 255 },{ 0, -1, 0 } },
+		{ { 255, 0, 0, 255 },{ -0.5, 1, 0 } },
 
-		{{0, 0, 255, 125}, {-1, 1, 0.4}}, // 蓝
-		{{0, 0, 255, 125}, {0, -1, 0.4}},
-		{{0, 0, 255, 125}, {1, 1, 0.4}}
+		{ { 0, 0, 255, 255 },{ 0, -1, 0 } }, // 蓝
+		{ { 0, 0, 255, 255 },{ 1, -1, 0 } },
+		{ { 0, 0, 255, 255 },{ 0.5, 1, 0 } }
 	};
 
 	glGenBuffers(NumBuffers, Buffers);
@@ -85,14 +71,35 @@ void init() {
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	// 深度测试
 	glEnable(GL_DEPTH_TEST);
-	/////////////////////////////////////////////////////////////////////// 2.绘制三角形 ///////////////////////////////////////////////////////////////////////
+	/////////////////////////////////////////////////////////////////////// 1.绘制三角形 ///////////////////////////////////////////////////////////////////////
+
+
+	/////////////////////////////////////////////////////////////////////// 2.帧缓冲对象 ///////////////////////////////////////////////////////////////////////
+	// 1.帧缓冲对象
+	glGenFramebuffers(1, &framebuffer);
+	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, framebuffer);
+
+	// 2.渲染缓存(颜色、深度)
+	glGenRenderbuffers(NumRenderbuffers, renderbuffer);
+	// 2-1 颜色缓冲区
+	glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer[Color]);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA, 256, 256);
+	// 2-2 深度缓冲区
+	glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer[Depth]);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 256, 256);
+
+	glFramebufferRenderbuffer(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, renderbuffer[Color]);
+	glFramebufferRenderbuffer(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, renderbuffer[Depth]);
+	/////////////////////////////////////////////////////////////////////// 2.帧缓冲对象 ///////////////////////////////////////////////////////////////////////
+
 }
 
-void display() {
+void display()
+{
 	/////////////////////////////////////////////////////////////////////// 1.自定义的帧缓冲区 ///////////////////////////////////////////////////////////////////////
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, framebuffer);
 	glViewport(0, 0, 256, 256);
-	glClearColor(1, 0, 0, 1);
+	glClearColor(1, 1, 1, 1); // 1.白
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	/////////////////////////////////////////////////////////////////////// 1.自定义的帧缓冲区 ///////////////////////////////////////////////////////////////////////
 
@@ -104,10 +111,11 @@ void display() {
 
 
 	/////////////////////////////////////////////////////////////////////// 3.默认的帧缓冲区 ///////////////////////////////////////////////////////////////////////
-	glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer); // 从自定义帧缓冲区读数据
-	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0); // 写入到默认的帧缓冲区
+	glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer); // 3-1 从自定义帧缓冲区读数据
+	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);		   // 3-2 写入到默认的帧缓冲区(也就是屏幕)
+
 	glViewport(0, 0, windowWidth, windowHeight);
-	glClearColor(0, 0, 1, 1);
+	glClearColor(0, 1, 0, 1); // 2.绿
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	// 执行拷贝操作
 	glBlitFramebuffer(0, 0, 255, 255, 0, 0, 255, 255, GL_COLOR_BUFFER_BIT, GL_NEAREST);
@@ -115,7 +123,8 @@ void display() {
 }
 
 
-int main() {
+int main()
+{
 	glfwInit();
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -123,20 +132,23 @@ int main() {
 
 	glfwWindowHint(GLFW_SAMPLES, 1); // 开启多重采样
 
-	GLFWwindow* window = glfwCreateWindow(512, 512, "LearnOpenGL", NULL, NULL);
-	if (window == NULL) {
+	GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "LearnOpenGL", NULL, NULL);
+	if (window == NULL)
+	{
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
 		return -1;
 	}
 	glfwMakeContextCurrent(window);
 
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
 		std::cout << "Failed to initialize GLAD" << std::endl;
 		return -1;
 	}
 	init();
-	while (!glfwWindowShouldClose(window)) {
+	while (!glfwWindowShouldClose(window))
+	{
 		// display
 		display();
 

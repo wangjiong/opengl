@@ -8,9 +8,6 @@ out vec4 fColor;
 void main()
 {    
 
-	//if(color.a < 0.2f){
-	//	discard;
-	//}
 	fColor = color;
 
 }
