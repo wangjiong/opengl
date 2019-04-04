@@ -15,7 +15,7 @@ public:
   {
     //static std::string(*pathBuilder)(std::string const &) = getPathBuilder();
     //return (*pathBuilder)(path);
-	  return path;
+	  return "../" + path;
   }
 
 private:

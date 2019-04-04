@@ -99,7 +99,7 @@ void display()
 	/////////////////////////////////////////////////////////////////////// 1.自定义的帧缓冲区 ///////////////////////////////////////////////////////////////////////
 	glBindFramebuffer( GL_DRAW_FRAMEBUFFER, framebuffer );
 	glViewport( 0, 0, 256, 256 );
-	glClearColor( 1, 1, 1, 1 ); // 白
+	glClearColor( 1, 1, 1, 1 ); // 1.白
 	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 	/////////////////////////////////////////////////////////////////////// 1.自定义的帧缓冲区 ///////////////////////////////////////////////////////////////////////
 
@@ -111,10 +111,11 @@ void display()
 
 
 	/////////////////////////////////////////////////////////////////////// 3.默认的帧缓冲区 ///////////////////////////////////////////////////////////////////////
-	glBindFramebuffer( GL_READ_FRAMEBUFFER, framebuffer ); // 从自定义帧缓冲区读数据
-	glBindFramebuffer( GL_DRAW_FRAMEBUFFER, 0 ); // 写入到默认的帧缓冲区
+	glBindFramebuffer( GL_READ_FRAMEBUFFER, framebuffer ); // 3-1 从自定义帧缓冲区读数据
+	glBindFramebuffer( GL_DRAW_FRAMEBUFFER, 0 );		   // 3-2 写入到默认的帧缓冲区(也就是屏幕)
+
 	glViewport( 0, 0, windowWidth, windowHeight );
-	glClearColor( 0, 1, 0, 1 );  // 绿
+	glClearColor( 0, 1, 0, 1 ); // 2.绿
 	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 	// 执行拷贝操作
 	glBlitFramebuffer( 0, 0, 255, 255, 0, 0, 255, 255, GL_COLOR_BUFFER_BIT, GL_NEAREST );
@@ -131,7 +132,7 @@ int main()
 
 	glfwWindowHint( GLFW_SAMPLES, 1 ); // 开启多重采样
 
-	GLFWwindow* window = glfwCreateWindow( 512, 512, "LearnOpenGL", NULL, NULL );
+	GLFWwindow* window = glfwCreateWindow(windowWidth, windowHeight, "LearnOpenGL", NULL, NULL );
 	if( window == NULL )
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;

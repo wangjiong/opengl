@@ -12,6 +12,7 @@
 
 #include <learnopengl/mesh.h>
 #include <learnopengl/shader.h>
+#include <learnopengl/filesystem.h>
 
 #include <string>
 #include <fstream>

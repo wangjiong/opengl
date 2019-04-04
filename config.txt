@@ -1,0 +1,17 @@
+VC++ Directories
+1.Include Directories
+..\includes;$(IncludePath)
+
+2.Library Directories
+..\lib;$(LibraryPath)
+
+C/C++
+Precompiled Header
+3.
+
+Linker
+4.
+assimp.lib
+glew32s.lib
+glfw3.lib
+SOIL.lib
