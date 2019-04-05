@@ -20,8 +20,16 @@ const GLuint NumVertices = 6;
 enum
 {
 	Color,
+	Color1,
+	Color2,
 	Depth,
 	NumRenderbuffers
+};
+
+GLenum fb0Buffers[] = {
+	GL_COLOR_ATTACHMENT0,
+	GL_COLOR_ATTACHMENT1,
+	GL_COLOR_ATTACHMENT2,
 };
 
 GLuint framebuffer, renderbuffer[NumRenderbuffers];
@@ -84,12 +92,23 @@ void init()
 	// 2-1 颜色缓冲区
 	glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer[Color]);
 	glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA, 256, 256);
+
+	glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer[Color1]);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA, 256, 256);
+
+	glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer[Color2]);
+	glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA, 256, 256);
+
 	// 2-2 深度缓冲区
 	glBindRenderbuffer(GL_RENDERBUFFER, renderbuffer[Depth]);
 	glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 256, 256);
 
 	glFramebufferRenderbuffer(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, renderbuffer[Color]);
+	glFramebufferRenderbuffer(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT1, GL_RENDERBUFFER, renderbuffer[Color1]);
+	glFramebufferRenderbuffer(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT2, GL_RENDERBUFFER, renderbuffer[Color2]);
 	glFramebufferRenderbuffer(GL_DRAW_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, renderbuffer[Depth]);
+
+	glDrawBuffers(3 , fb0Buffers);
 	/////////////////////////////////////////////////////////////////////// 2.帧缓冲对象 ///////////////////////////////////////////////////////////////////////
 
 }
@@ -108,7 +127,8 @@ void display()
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 	glDrawArrays(GL_TRIANGLES, 3, 3);;
 	/////////////////////////////////////////////////////////////////////// 2.绘制三角形 ///////////////////////////////////////////////////////////////////////
-
+	
+	glReadBuffer(GL_COLOR_ATTACHMENT2);
 
 	/////////////////////////////////////////////////////////////////////// 3.默认的帧缓冲区 ///////////////////////////////////////////////////////////////////////
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer); // 3-1 从自定义帧缓冲区读数据
