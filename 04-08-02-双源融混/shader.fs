@@ -2,12 +2,15 @@
 
 in vec4 color;
 
-layout (location = 0) out vec4 color;
-layout (location = 1) out vec4 normal;
+//out vec4 fColor;
 
-out vec4 fColor;
 
 void main()
 {    
-	fColor = color;
+
+	//fColor = color;
+	//gl_FragColor = color;
+	gl_FragData[0] = vec4(1,0,0,1);
+	gl_FragData[1] = vec4(0,1,0,1);
+	gl_FragData[2] = vec4(0,0,1,1);
 }
