@@ -19,11 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AE725ADF-5353-4333-B842-A86D7C836B4F}</ProjectGuid>
+    <ProjectGuid>{B8A3BC8C-4F0A-4B04-B0E7-283775E47603}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My040702glGenFramebuffers</RootNamespace>
+    <RootNamespace>My0501变换</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>04-07-02-glGenFramebuffers-正常模式</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -153,9 +152,9 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="04-07-02-glGenFramebuffers.cpp" />
-    <ClCompile Include="glad.c" />
-    <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="..\glad.c" />
+    <ClCompile Include="..\stb_image.cpp" />
+    <ClCompile Include="05-01-变换.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -164,10 +163,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="5.1.framebuffers.fs" />
-    <None Include="5.1.framebuffers.vs" />
-    <None Include="5.1.framebuffers_screen.fs" />
-    <None Include="5.1.framebuffers_screen.vs" />
+    <None Include="shader.fs" />
+    <None Include="shader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

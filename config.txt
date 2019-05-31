@@ -15,3 +15,5 @@ assimp.lib
 glew32s.lib
 glfw3.lib
 SOIL.lib
+
+5.项目中添加stb_image.cpp glad.c

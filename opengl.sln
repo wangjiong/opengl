@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opengl", "opengl\opengl.vcxproj", "{9F0D4AF3-91D0-40C0-BC70-A3C4B2E40665}"
 EndProject
@@ -71,9 +71,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-05-13-条件渲染", "04
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-01-帧缓冲对象-渲染缓存", "04-07-帧缓冲对象-渲染缓存\04-07-帧缓冲对象-渲染缓存.vcxproj", "{A21C8322-C8CE-43AB-9C4E-77E590D29393}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-08-01-多重渲染缓存的同步写入", "04-08-01-多重渲染缓存的同步写入\04-08-01-多重渲染缓存的同步写入.vcxproj", "{B2F321E3-65C2-4E87-A9EF-69961BCE328F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-08-01-多重渲染缓存的同步写入-glDrawBuffers", "04-08-01-多重渲染缓存的同步写入\04-08-01-多重渲染缓存的同步写入.vcxproj", "{B2F321E3-65C2-4E87-A9EF-69961BCE328F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-08-02-双源融混", "04-08-02-双源融混\04-08-02-双源融混.vcxproj", "{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-08-02-双源融混-glReadBuffer", "04-08-02-双源融混\04-08-02-双源融混.vcxproj", "{5FE58286-50D7-44D0-A85E-3EE10C3EFBE8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-09-glReadPixels", "04-09-glReadPixels\04-09-glReadPixels.vcxproj", "{E5DF7DD4-9413-43BF-A615-EDC81E1E3CC4}"
 EndProject
@@ -81,9 +81,19 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-10-glBlitFramebuffer", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test-Time", "Test-Time\Test-Time.vcxproj", "{8E7099EF-5CD7-4808-9744-1206E5F1CAB2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-02-glGenFramebuffers", "04-07-02-glGenFramebuffers\04-07-02-glGenFramebuffers.vcxproj", "{AE725ADF-5353-4333-B842-A86D7C836B4F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-02-glGenFramebuffers-正常模式", "04-07-02-glGenFramebuffers\04-07-02-glGenFramebuffers.vcxproj", "{AE725ADF-5353-4333-B842-A86D7C836B4F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-03-后期处理-边缘检测", "04-07-03-后期处理-边缘检测\04-07-03-后期处理-边缘检测.vcxproj", "{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-03-后期处理-反相", "04-07-03-后期处理-边缘检测\04-07-03-后期处理-边缘检测.vcxproj", "{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05-01-变换", "05-01-变换\05-01-变换.vcxproj", "{B8A3BC8C-4F0A-4B04-B0E7-283775E47603}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-04-后期处理-灰度", "04-07-04-后期处理-灰度\04-07-04-后期处理-灰度.vcxproj", "{0095E07A-AB7A-4BBA-ACDE-789E6314ECE3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-05-后期处理-核效果", "04-07-05-后期处理-核效果\04-07-05-后期处理-核效果.vcxproj", "{EED86A16-F943-434F-AE0B-EC2A05AA379F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-06-后期处理-模糊", "04-07-06-后期处理-模糊\04-07-06-后期处理-模糊.vcxproj", "{24B2A658-04AC-43F4-BC9E-E7651DC107F4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "04-07-07-后期处理-边缘检测", "04-07-07-后期处理-边缘检测\04-07-07-后期处理-边缘检测.vcxproj", "{22DC38C7-F2F8-4559-B393-AED231F912C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -421,6 +431,46 @@ Global
 		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Release|x64.Build.0 = Release|x64
 		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Release|x86.ActiveCfg = Release|Win32
 		{B670E3F2-D7FB-46CB-8D16-6F8E095B9970}.Release|x86.Build.0 = Release|Win32
+		{B8A3BC8C-4F0A-4B04-B0E7-283775E47603}.Debug|x64.ActiveCfg = Debug|x64
+		{B8A3BC8C-4F0A-4B04-B0E7-283775E47603}.Debug|x64.Build.0 = Debug|x64
+		{B8A3BC8C-4F0A-4B04-B0E7-283775E47603}.Debug|x86.ActiveCfg = Debug|Win32
+		{B8A3BC8C-4F0A-4B04-B0E7-283775E47603}.Debug|x86.Build.0 = Debug|Win32
+		{B8A3BC8C-4F0A-4B04-B0E7-283775E47603}.Release|x64.ActiveCfg = Release|x64
+		{B8A3BC8C-4F0A-4B04-B0E7-283775E47603}.Release|x64.Build.0 = Release|x64
+		{B8A3BC8C-4F0A-4B04-B0E7-283775E47603}.Release|x86.ActiveCfg = Release|Win32
+		{B8A3BC8C-4F0A-4B04-B0E7-283775E47603}.Release|x86.Build.0 = Release|Win32
+		{0095E07A-AB7A-4BBA-ACDE-789E6314ECE3}.Debug|x64.ActiveCfg = Debug|x64
+		{0095E07A-AB7A-4BBA-ACDE-789E6314ECE3}.Debug|x64.Build.0 = Debug|x64
+		{0095E07A-AB7A-4BBA-ACDE-789E6314ECE3}.Debug|x86.ActiveCfg = Debug|Win32
+		{0095E07A-AB7A-4BBA-ACDE-789E6314ECE3}.Debug|x86.Build.0 = Debug|Win32
+		{0095E07A-AB7A-4BBA-ACDE-789E6314ECE3}.Release|x64.ActiveCfg = Release|x64
+		{0095E07A-AB7A-4BBA-ACDE-789E6314ECE3}.Release|x64.Build.0 = Release|x64
+		{0095E07A-AB7A-4BBA-ACDE-789E6314ECE3}.Release|x86.ActiveCfg = Release|Win32
+		{0095E07A-AB7A-4BBA-ACDE-789E6314ECE3}.Release|x86.Build.0 = Release|Win32
+		{EED86A16-F943-434F-AE0B-EC2A05AA379F}.Debug|x64.ActiveCfg = Debug|x64
+		{EED86A16-F943-434F-AE0B-EC2A05AA379F}.Debug|x64.Build.0 = Debug|x64
+		{EED86A16-F943-434F-AE0B-EC2A05AA379F}.Debug|x86.ActiveCfg = Debug|Win32
+		{EED86A16-F943-434F-AE0B-EC2A05AA379F}.Debug|x86.Build.0 = Debug|Win32
+		{EED86A16-F943-434F-AE0B-EC2A05AA379F}.Release|x64.ActiveCfg = Release|x64
+		{EED86A16-F943-434F-AE0B-EC2A05AA379F}.Release|x64.Build.0 = Release|x64
+		{EED86A16-F943-434F-AE0B-EC2A05AA379F}.Release|x86.ActiveCfg = Release|Win32
+		{EED86A16-F943-434F-AE0B-EC2A05AA379F}.Release|x86.Build.0 = Release|Win32
+		{24B2A658-04AC-43F4-BC9E-E7651DC107F4}.Debug|x64.ActiveCfg = Debug|x64
+		{24B2A658-04AC-43F4-BC9E-E7651DC107F4}.Debug|x64.Build.0 = Debug|x64
+		{24B2A658-04AC-43F4-BC9E-E7651DC107F4}.Debug|x86.ActiveCfg = Debug|Win32
+		{24B2A658-04AC-43F4-BC9E-E7651DC107F4}.Debug|x86.Build.0 = Debug|Win32
+		{24B2A658-04AC-43F4-BC9E-E7651DC107F4}.Release|x64.ActiveCfg = Release|x64
+		{24B2A658-04AC-43F4-BC9E-E7651DC107F4}.Release|x64.Build.0 = Release|x64
+		{24B2A658-04AC-43F4-BC9E-E7651DC107F4}.Release|x86.ActiveCfg = Release|Win32
+		{24B2A658-04AC-43F4-BC9E-E7651DC107F4}.Release|x86.Build.0 = Release|Win32
+		{22DC38C7-F2F8-4559-B393-AED231F912C4}.Debug|x64.ActiveCfg = Debug|x64
+		{22DC38C7-F2F8-4559-B393-AED231F912C4}.Debug|x64.Build.0 = Debug|x64
+		{22DC38C7-F2F8-4559-B393-AED231F912C4}.Debug|x86.ActiveCfg = Debug|Win32
+		{22DC38C7-F2F8-4559-B393-AED231F912C4}.Debug|x86.Build.0 = Debug|Win32
+		{22DC38C7-F2F8-4559-B393-AED231F912C4}.Release|x64.ActiveCfg = Release|x64
+		{22DC38C7-F2F8-4559-B393-AED231F912C4}.Release|x64.Build.0 = Release|x64
+		{22DC38C7-F2F8-4559-B393-AED231F912C4}.Release|x86.ActiveCfg = Release|Win32
+		{22DC38C7-F2F8-4559-B393-AED231F912C4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
