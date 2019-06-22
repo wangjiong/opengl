@@ -32,6 +32,7 @@ void init()
 	glTransformFeedbackVaryings( program, 1, feedbackVaryings, GL_INTERLEAVED_ATTRIBS );
 
 	glLinkProgram( program );
+
 	glUseProgram( program );
 
 	GLuint vao;

@@ -103,7 +103,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05-02-03-坐标系统-正�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05-02-04-摄像机", "05-02-04-摄像机\05-02-04-摄像机.vcxproj", "{EAE22CF3-F4FC-43C5-8719-801C35767E40}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05-04-01-transform feedback", "05-04-01-transform feedback\05-04-01-transform feedback.vcxproj", "{645A018F-8F78-4D82-8FC9-1E4C09CA58DD}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05-04-01-transform feedback-sqrt", "05-04-01-transform feedback\05-04-01-transform feedback.vcxproj", "{645A018F-8F78-4D82-8FC9-1E4C09CA58DD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05-04-02-transform feedback-Point", "05-04-02-transform feedback-Point\05-04-02-transform feedback-Point.vcxproj", "{41DF8B44-DBA4-4033-9D7A-D11DE5DB3571}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -521,6 +523,14 @@ Global
 		{645A018F-8F78-4D82-8FC9-1E4C09CA58DD}.Release|x64.Build.0 = Release|x64
 		{645A018F-8F78-4D82-8FC9-1E4C09CA58DD}.Release|x86.ActiveCfg = Release|Win32
 		{645A018F-8F78-4D82-8FC9-1E4C09CA58DD}.Release|x86.Build.0 = Release|Win32
+		{41DF8B44-DBA4-4033-9D7A-D11DE5DB3571}.Debug|x64.ActiveCfg = Debug|x64
+		{41DF8B44-DBA4-4033-9D7A-D11DE5DB3571}.Debug|x64.Build.0 = Debug|x64
+		{41DF8B44-DBA4-4033-9D7A-D11DE5DB3571}.Debug|x86.ActiveCfg = Debug|Win32
+		{41DF8B44-DBA4-4033-9D7A-D11DE5DB3571}.Debug|x86.Build.0 = Debug|Win32
+		{41DF8B44-DBA4-4033-9D7A-D11DE5DB3571}.Release|x64.ActiveCfg = Release|x64
+		{41DF8B44-DBA4-4033-9D7A-D11DE5DB3571}.Release|x64.Build.0 = Release|x64
+		{41DF8B44-DBA4-4033-9D7A-D11DE5DB3571}.Release|x86.ActiveCfg = Release|Win32
+		{41DF8B44-DBA4-4033-9D7A-D11DE5DB3571}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
