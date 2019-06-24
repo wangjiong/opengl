@@ -35,21 +35,20 @@ int main() {
 		0.1f, 0.1f,
 	};
 
-	int col = 5;
-	int row = 5;
-	int index = 0;
-	float* pVertices = new float[col * row * 2];
-	for( int i = 0; i < col; i++ )
-	{
-		for( int j = 0; j < row; j++ )
-		{
-			pVertices[index++] = i * 0.1f;
-			pVertices[index++] = j * 0.1f;
+	const int col = 2;
+	const int row = 2;
+	//int index = 0;
+	//float* pVertices = new float[col * row * 2];
+	//for( int i = 0; i < col; i++ )
+	//{
+	//	for( int j = 0; j < row; j++ )
+	//	{
+	//		pVertices[index++] = i * 0.1f;
+	//		pVertices[index++] = j * 0.1f;
 
-			printf("%f %f\n" , i * 0.1f , j * 0.1f);
-		}
-		
-	}
+	//		//printf("%f %f\n" , i * 0.1f , j * 0.1f);
+	//	}
+	//}
 
 	// VAO
 	unsigned int VAO;
@@ -59,23 +58,62 @@ int main() {
 	unsigned int VBO;
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	//glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	glBufferData(GL_ARRAY_BUFFER, col * row * 2 * sizeof(float), pVertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	//glBufferData(GL_ARRAY_BUFFER, col * row * 2 * sizeof(float), pVertices, GL_STATIC_DRAW);
 	// 顶点规范
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 	// Shader
 	Shader shader("shader.vs", "shader.fs");
+
+	shader.use();
+	const GLchar* feedbackVaryings[] = { "outValue" };
+	glTransformFeedbackVaryings( shader.ID, 1, feedbackVaryings, GL_INTERLEAVED_ATTRIBS );
+	glLinkProgram( shader.ID );
+
 	// 点的大小
 	glPointSize(10);
 
+	///////////////////////
+	unsigned int VAO1;
+	glGenVertexArrays(1, &VAO1);
+	glBindVertexArray(VAO1);
+
+	GLuint tbo;
+	glGenBuffers(1, &tbo);
+	glBindBuffer(GL_ARRAY_BUFFER, tbo);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_READ);
+
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
+	///////////////////////
+
+	int i = 0;
 	while (!glfwWindowShouldClose(window)) {
 		processInput(window);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		shader.use();
+
+		if( i++ % 2 == 0 )
+		{
+			glBindVertexArray( VAO );
+			glBindBufferBase( GL_TRANSFORM_FEEDBACK_BUFFER, 0, tbo );
+		}
+		else
+		{
+			glBindVertexArray( VAO1 );
+			glBindBufferBase( GL_TRANSFORM_FEEDBACK_BUFFER, 0, VBO );
+		}
+
+		
+		glBeginTransformFeedback(GL_POINTS);
 		glDrawArrays(GL_POINTS, 0, col * row);
+		glEndTransformFeedback();
+
+
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();
