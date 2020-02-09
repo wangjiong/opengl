@@ -19,11 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B2F321E3-65C2-4E87-A9EF-69961BCE328F}</ProjectGuid>
+    <ProjectGuid>{C316F84F-F5DD-4020-8585-A902B5D0DC58}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>My040801多重渲染缓存的同步写入</RootNamespace>
+    <RootNamespace>My060501glTexStorage2DglTexSubImage2D</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>04-08-01-多重渲染缓存的同步写入-glDrawBuffers</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -155,7 +154,7 @@
   <ItemGroup>
     <ClCompile Include="..\glad.c" />
     <ClCompile Include="..\stb_image.cpp" />
-    <ClCompile Include="04-08-01-多重渲染缓存的同步写入.cpp" />
+    <ClCompile Include="06-05-01-glTexStorage2D-glTexSubImage2D.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

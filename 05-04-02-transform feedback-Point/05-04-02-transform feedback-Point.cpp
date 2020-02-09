@@ -64,7 +64,7 @@ int main() {
 	for( int i = 0; i < 2; i++ )
 	{
 		glBindVertexArray( vaos[i] );
-		glBindBuffer( GL_ARRAY_BUFFER, vaos[i] );
+		glBindBuffer( GL_ARRAY_BUFFER, vbos[i] );
 		//glBufferData( GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW );
 		glBufferData(GL_ARRAY_BUFFER, col * row * 2 * sizeof(float), pVertices, GL_STATIC_DRAW);
 
